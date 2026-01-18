@@ -18,7 +18,7 @@ navItems.forEach(item => {
     });
 });
 
-// Active Navigation Link on Scroll
+// Active Navigation Link on Scroll and Navbar shadow on scroll
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (window.scrollY >= (sectionTop - 100)) {
             current = section.getAttribute('id');
         }
     });
@@ -38,6 +38,14 @@ window.addEventListener('scroll', () => {
             item.classList.add('active');
         }
     });
+    
+    // Update navbar shadow
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+    } else {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    }
 });
 
 // Smooth scrolling for navigation links
@@ -104,12 +112,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-});
+
