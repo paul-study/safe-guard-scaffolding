@@ -1,0 +1,9 @@
+# Robots.txt for Safeguard Scaffolding
+# https://safeguardscaffolding.co.nz
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://safeguardscaffolding.co.nz/sitemap.xml
